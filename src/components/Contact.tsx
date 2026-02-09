@@ -44,7 +44,7 @@ export default function Contact() {
             variants={fadeInUp}
             className="text-white/60 text-base mb-10"
           >
-            kaniel@kanieltord.com
+            k@kanielt.com
           </motion.p>
 
           <motion.div
@@ -52,7 +52,7 @@ export default function Contact() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Button
-              href="mailto:kaniel@kanieltord.com"
+              href="mailto:k@kanielt.com"
               variant="primary"
               size="lg"
               icon={<Mail size={18} />}

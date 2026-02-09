@@ -1,55 +1,124 @@
 import { motion } from 'framer-motion'
-import { ExternalLink, Zap, Globe, Mic, Truck } from 'lucide-react'
-import GlassCard from './ui/GlassCard'
-import Badge from './ui/Badge'
+import {
+  Sun, Globe, Monitor, TrendingUp, Activity,
+  Truck, Link2, Layout, Radio, ArrowUpRight,
+} from 'lucide-react'
 import { fadeInUp, staggerContainer, staggerItem } from '../lib/motion'
 
 const projects = [
   {
-    title: 'Navitas CRM',
+    title: 'Solar OS',
+    subtitle: 'SaaS CRM for Solar Companies',
     description:
-      'Solar project management platform powering installations across Israel. Multi-inverter monitoring, automated licensing workflows, financial analytics, and AI-powered operational insights.',
-    tags: ['React', 'TypeScript', 'Supabase', 'Vercel'],
-    icon: Zap,
-    link: 'https://crm.navitas.co.il',
-    linkLabel: 'crm.navitas.co.il',
-    status: null,
-    gradient: 'from-primary/30 via-primary/10 to-transparent',
+      'End-to-end solar project management — multi-inverter monitoring, licensing automation, AI proposals, Stripe payments, and 6-step onboarding wizard.',
+    tags: ['React', 'TypeScript', 'Supabase', 'Stripe', 'Vercel'],
+    status: 'live' as const,
+    url: 'https://crm.navitas.co.il',
+    icon: Sun,
+    gradient: 'from-sky-500/20 to-amber-500/20',
+    highlight: '34 pages · 100+ components',
   },
   {
     title: 'Solaris Panama',
+    subtitle: 'AI-Powered Solar Analysis',
     description:
-      'AI-first commercial rooftop solar platform for the Panama market. Automated roof scanning, lead generation, system design, and regulatory compliance tools.',
-    tags: ['React', 'AI', 'Solar Design'],
+      'Commercial rooftop solar platform with AI roof scanner, solar calculator (IRR/NPV/LCOE), and Claude-powered proposal generator with satellite mapping.',
+    tags: ['React', 'Mapbox', 'Claude AI', 'PVWatts'],
+    status: 'live' as const,
+    url: 'https://platform-gray-eta.vercel.app',
     icon: Globe,
-    link: null,
-    linkLabel: null,
-    status: 'In Development',
-    gradient: 'from-secondary/30 via-secondary/10 to-transparent',
+    gradient: 'from-emerald-500/20 to-cyan-500/20',
+    highlight: '14 pages · 3 AI tools',
   },
   {
-    title: 'AI Voice Cloning Pipeline',
+    title: 'Solar OS Website',
+    subtitle: 'Marketing & Lead Funnel',
     description:
-      'Professional voice cloning service using Demucs vocal isolation and ElevenLabs for speakers and thought leaders. Full audio processing and quality pipeline.',
-    tags: ['Python', 'AI', 'ElevenLabs'],
-    icon: Mic,
-    link: null,
-    linkLabel: null,
-    status: 'Active',
-    gradient: 'from-pink-500/30 via-pink-500/10 to-transparent',
+      'CRO-optimized Hebrew marketing site with 3-step demo funnel, lead capture to Supabase + WhatsApp notifications, and Stripe checkout.',
+    tags: ['React', 'CRO', 'Supabase', 'Vercel'],
+    status: 'live' as const,
+    url: 'https://solar-os-website.vercel.app',
+    icon: Monitor,
+    gradient: 'from-violet-500/20 to-fuchsia-500/20',
+    highlight: '5 pages · Lead funnel',
   },
   {
-    title: 'Distribution Management System',
+    title: 'Solari Argentina',
+    subtitle: 'Solar Operations Platform',
     description:
-      'Full-stack PWA for managing delivery routes, drivers, and real-time logistics. Mobile-first driver interface with manager dashboard and analytics.',
-    tags: ['React', 'Node.js', 'PostgreSQL', 'Docker'],
+      'Bilingual partner ops guide — solar academy (15 topics), supplier directory, utility guides, licensing tracker, and AI proposal tool for the Argentine market.',
+    tags: ['React', 'i18n', 'Recharts', 'TypeScript'],
+    status: 'dev' as const,
+    icon: TrendingUp,
+    gradient: 'from-blue-500/20 to-indigo-500/20',
+    highlight: '15 routes · 96 components',
+  },
+  {
+    title: 'HealthOS',
+    subtitle: 'Personal Health Platform',
+    description:
+      'React Native health app with Whoop integration, nutrition tracking, AI health assistant, and wearable sync across 16 screens.',
+    tags: ['React Native', 'Expo', 'Express', 'Whoop API'],
+    status: 'dev' as const,
+    icon: Activity,
+    gradient: 'from-green-500/20 to-emerald-500/20',
+    highlight: '16 screens · Whoop sync',
+  },
+  {
+    title: 'Lavi Distribution',
+    subtitle: 'Logistics Management',
+    description:
+      'Full-stack distribution PWA with driver mobile flow (signature capture), manager dashboard, real-time Socket.io tracking, and Docker deployment.',
+    tags: ['React', 'Express', 'PostgreSQL', 'Docker'],
+    status: 'dev' as const,
     icon: Truck,
-    link: null,
-    linkLabel: null,
-    status: null,
-    gradient: 'from-amber-500/30 via-amber-500/10 to-transparent',
+    gradient: 'from-orange-500/20 to-red-500/20',
+    highlight: 'Docker · Real-time · PWA',
+  },
+  {
+    title: 'LinkHub',
+    subtitle: 'Link-in-Bio Platform',
+    description:
+      'Premium link-in-bio with Apple-inspired dark design, analytics dashboard, custom themes, service cards, and booking system.',
+    tags: ['Next.js', 'TypeScript', 'Prisma', 'Tailwind'],
+    status: 'dev' as const,
+    icon: Link2,
+    gradient: 'from-pink-500/20 to-rose-500/20',
+    highlight: '34 routes · Apple design',
+  },
+  {
+    title: 'Project Dashboard',
+    subtitle: 'Developer Productivity',
+    description:
+      'Electron + Web app with 4 view modes (List/Grid/Kanban/GitGraph), ⌘K command palette, Vim-style navigation, and GitHub heatmap.',
+    tags: ['React', 'Electron', 'Zustand', 'dnd-kit'],
+    status: 'dev' as const,
+    icon: Layout,
+    gradient: 'from-cyan-500/20 to-blue-500/20',
+    highlight: '4 views · ⌘K palette',
+  },
+  {
+    title: 'Morning Briefing',
+    subtitle: 'AI Daily Podcast',
+    description:
+      'Automated daily briefing — AI news from Reddit & HackerNews → NotebookLM podcast generation → WhatsApp + Telegram delivery.',
+    tags: ['Python', 'NotebookLM', 'ElevenLabs', 'WhatsApp'],
+    status: 'dev' as const,
+    icon: Radio,
+    gradient: 'from-yellow-500/20 to-amber-500/20',
+    highlight: 'Daily automation',
   },
 ]
+
+const statusStyles = {
+  live: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
+  dev: 'bg-amber-500/20 text-amber-400 border-amber-500/30',
+}
+
+const statusLabels = {
+  live: 'Live',
+  dev: 'In Dev',
+}
 
 export default function Projects() {
   return (
@@ -66,10 +135,10 @@ export default function Projects() {
             Portfolio
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mt-4 mb-4">
-            Featured projects
+            What I've been building
           </h2>
           <p className="text-white/40 max-w-lg mx-auto">
-            A selection of platforms and systems I've built and shipped.
+            A selection of projects across solar energy, AI, and software platforms.
           </p>
         </motion.div>
 
@@ -78,50 +147,69 @@ export default function Projects() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {projects.map((project) => (
-            <motion.div key={project.title} variants={staggerItem}>
-              <GlassCard className="p-8 h-full flex flex-col" glow="primary">
-                <div className="relative mb-6">
-                  <div className={`absolute -inset-4 bg-gradient-to-br ${project.gradient} rounded-2xl blur-2xl opacity-50`} />
-                  <div className="relative w-full h-40 rounded-xl bg-surface-50 border border-white/5 flex items-center justify-center overflow-hidden">
-                    <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-30`} />
-                    <project.icon size={48} className="relative text-white/20" />
-                  </div>
-                </div>
+            <motion.div
+              key={project.title}
+              variants={staggerItem}
+              whileHover={{ y: -4 }}
+              transition={{ duration: 0.2 }}
+              className="group"
+            >
+              <div className="h-full rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:border-white/[0.12] hover:bg-white/[0.05] transition-all duration-300 overflow-hidden">
+                {/* Gradient header with icon */}
+                <div className={`relative h-32 bg-gradient-to-br ${project.gradient} flex items-center justify-center`}>
+                  <project.icon size={32} className="text-white/40" />
 
-                <div className="flex items-center gap-3 mb-3">
-                  <h3 className="text-xl font-semibold text-white">
-                    {project.title}
-                  </h3>
-                  {project.status && (
-                    <Badge variant="status">{project.status}</Badge>
+                  {/* Status badge */}
+                  <div className="absolute top-3 right-3">
+                    <span className={`inline-flex items-center px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider rounded-full border ${statusStyles[project.status]}`}>
+                      {statusLabels[project.status]}
+                    </span>
+                  </div>
+
+                  {/* External link */}
+                  {project.url && (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute top-3 left-3 w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white/50 hover:text-white hover:bg-white/20 transition-all"
+                    >
+                      <ArrowUpRight size={14} />
+                    </a>
                   )}
                 </div>
 
-                <p className="text-white/40 text-sm leading-relaxed mb-6 flex-1">
-                  {project.description}
-                </p>
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="text-lg font-semibold text-white mb-1">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm text-primary/80 mb-3">
+                    {project.subtitle}
+                  </p>
+                  <p className="text-sm text-white/40 leading-relaxed mb-3 line-clamp-3">
+                    {project.description}
+                  </p>
+                  <p className="text-xs text-white/25 mb-4">
+                    {project.highlight}
+                  </p>
 
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tags.map((tag) => (
-                    <Badge key={tag} variant="outline">{tag}</Badge>
-                  ))}
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2.5 py-1 text-[11px] rounded-full bg-white/5 text-white/40 border border-white/5"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-
-                {project.link && (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm text-primary/80 hover:text-primary transition-colors"
-                  >
-                    <ExternalLink size={14} />
-                    {project.linkLabel}
-                  </a>
-                )}
-              </GlassCard>
+              </div>
             </motion.div>
           ))}
         </motion.div>

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Linkedin, Github, Twitter, Mail, MessageCircle, Zap } from 'lucide-react'
+import { Linkedin, Github, Twitter, Mail, MessageCircle, Sun } from 'lucide-react'
 import { fadeInUp, staggerContainer, staggerItem } from '../lib/motion'
 
 const links = [
@@ -23,7 +23,7 @@ const links = [
   },
   {
     label: 'Email',
-    href: 'mailto:kaniel@kanieltord.com',
+    href: 'mailto:k@kanielt.com',
     icon: Mail,
     color: 'hover:border-primary/30 hover:text-primary',
   },
@@ -34,10 +34,10 @@ const links = [
     color: 'hover:border-green-400/30 hover:text-green-400',
   },
   {
-    label: 'Navitas CRM',
+    label: 'Solar OS',
     href: 'https://crm.navitas.co.il',
-    icon: Zap,
-    color: 'hover:border-primary/30 hover:text-primary',
+    icon: Sun,
+    color: 'hover:border-amber-400/30 hover:text-amber-400',
   },
 ]
 

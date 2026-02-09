@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Sun, Bot, Globe } from 'lucide-react'
+import { Code2, Bot, Sun } from 'lucide-react'
 import GlassCard from './ui/GlassCard'
 import Badge from './ui/Badge'
 import Button from './ui/Button'
@@ -7,35 +7,35 @@ import { fadeInUp, staggerContainer, staggerItem } from '../lib/motion'
 
 const services = [
   {
-    icon: Sun,
-    title: 'Solar CRM Platform',
+    icon: Code2,
+    title: 'SaaS Development',
     description:
-      'All-in-one solar project management. Multi-inverter monitoring (SolarEdge, Huawei, Sungrow), licensing automation, financial analytics, and AI-powered insights.',
-    badge: 'SaaS',
+      'Custom SaaS platforms built end-to-end — database design, auth, payment integration, monitoring dashboards, onboarding flows, and production deployment on Vercel.',
+    badge: 'Development',
     badgeVariant: 'primary' as const,
-    cta: 'Learn More',
-    ctaHref: '#projects',
+    cta: 'Start a Project',
+    ctaHref: '#contact',
     gradient: 'from-primary/20 to-primary/0',
     iconColor: 'text-primary',
   },
   {
     icon: Bot,
-    title: 'AI Automation & Development',
+    title: 'AI Integration',
     description:
-      'Custom AI systems for businesses. Chatbots, workflow automation, CRM development, voice cloning, and digital twin creation.',
-    badge: 'Services',
+      'AI-powered features for your business — chatbots, workflow automation, document processing, voice cloning, and custom pipelines using Claude, GPT, and open-source models.',
+    badge: 'AI',
     badgeVariant: 'secondary' as const,
-    cta: 'Get Quote',
+    cta: 'Get a Quote',
     ctaHref: '#contact',
     gradient: 'from-secondary/20 to-secondary/0',
     iconColor: 'text-secondary',
   },
   {
-    icon: Globe,
-    title: 'Solar Consulting',
+    icon: Sun,
+    title: 'Solar Technology',
     description:
-      'AI-first solar market entry strategy. Feasibility studies, regulatory analysis, technology stack recommendations, and operational setup for new markets.',
-    badge: 'Consulting',
+      'Solar CRM setup, inverter monitoring integration, energy analysis tools, market entry consulting, and regulatory compliance automation for solar companies worldwide.',
+    badge: 'Solar',
     badgeVariant: 'primary' as const,
     cta: 'Book a Call',
     ctaHref: '#contact',
@@ -59,10 +59,10 @@ export default function Services() {
             Services
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mt-4 mb-4">
-            What I build
+            What I can build for you
           </h2>
           <p className="text-white/40 max-w-lg mx-auto">
-            End-to-end solutions combining AI, solar technology, and modern web development.
+            End-to-end solutions combining modern web development, AI, and solar technology.
           </p>
         </motion.div>
 
@@ -76,7 +76,7 @@ export default function Services() {
           {services.map((service) => (
             <motion.div key={service.title} variants={staggerItem}>
               <GlassCard className="p-8 h-full flex flex-col" glow="primary">
-                <div className={`relative mb-6`}>
+                <div className="relative mb-6">
                   <div className={`absolute inset-0 w-12 h-12 rounded-xl bg-gradient-to-br ${service.gradient} blur-xl`} />
                   <div className={`relative w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center ${service.iconColor}`}>
                     <service.icon size={22} />
