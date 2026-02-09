@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Mail, Calendar } from 'lucide-react'
+import { Mail, MessageCircle } from 'lucide-react'
 import Button from './ui/Button'
 import { fadeInUp, staggerContainer } from '../lib/motion'
 
@@ -28,16 +28,16 @@ export default function Contact() {
             variants={fadeInUp}
             className="text-4xl sm:text-5xl font-bold text-white mt-4 mb-6"
           >
-            Let's build something
+            Ready to build
             <br />
-            <span className="text-gradient">together.</span>
+            <span className="text-gradient">your system?</span>
           </motion.h2>
 
           <motion.p
             variants={fadeInUp}
             className="text-white/40 text-lg mb-4"
           >
-            Have a solar project, AI idea, or need a custom platform?
+            Tell me what's eating your time. I'll show you how to automate it.
           </motion.p>
 
           <motion.p
@@ -64,9 +64,9 @@ export default function Contact() {
               href="https://wa.me/972502213948"
               variant="secondary"
               size="lg"
-              icon={<Calendar size={18} />}
+              icon={<MessageCircle size={18} />}
             >
-              Schedule a Call
+              WhatsApp
             </Button>
           </motion.div>
         </motion.div>

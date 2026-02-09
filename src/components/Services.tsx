@@ -1,20 +1,15 @@
 import { motion } from 'framer-motion'
-import { Code2, Bot, Sun } from 'lucide-react'
+import { Blocks, Bot, Sun, ArrowRight } from 'lucide-react'
 import GlassCard from './ui/GlassCard'
-import Badge from './ui/Badge'
 import Button from './ui/Button'
 import { fadeInUp, staggerContainer, staggerItem } from '../lib/motion'
 
 const services = [
   {
-    icon: Code2,
+    icon: Blocks,
     title: 'SaaS Development',
     description:
-      'Custom SaaS platforms built end-to-end — database design, auth, payment integration, monitoring dashboards, onboarding flows, and production deployment on Vercel.',
-    badge: 'Development',
-    badgeVariant: 'primary' as const,
-    cta: 'Start a Project',
-    ctaHref: '#contact',
+      'Custom platforms that run your business — from database and auth to payments, dashboards, and deployment. You describe the workflow, I build the system.',
     gradient: 'from-primary/20 to-primary/0',
     iconColor: 'text-primary',
   },
@@ -22,11 +17,7 @@ const services = [
     icon: Bot,
     title: 'AI Integration',
     description:
-      'AI-powered features for your business — chatbots, workflow automation, document processing, voice cloning, and custom pipelines using Claude, GPT, and open-source models.',
-    badge: 'AI',
-    badgeVariant: 'secondary' as const,
-    cta: 'Get a Quote',
-    ctaHref: '#contact',
+      'Turn manual processes into automated ones — chatbots, document processing, voice cloning, smart pipelines. Less busywork, more freedom.',
     gradient: 'from-secondary/20 to-secondary/0',
     iconColor: 'text-secondary',
   },
@@ -34,11 +25,7 @@ const services = [
     icon: Sun,
     title: 'Solar Technology',
     description:
-      'Solar CRM setup, inverter monitoring integration, energy analysis tools, market entry consulting, and regulatory compliance automation for solar companies worldwide.',
-    badge: 'Solar',
-    badgeVariant: 'primary' as const,
-    cta: 'Book a Call',
-    ctaHref: '#contact',
+      'Full-stack solar business systems — CRM setup, inverter monitoring, energy analysis, licensing automation. Everything a solar company needs to scale.',
     gradient: 'from-primary/10 via-secondary/10 to-transparent',
     iconColor: 'text-primary',
   },
@@ -56,13 +43,16 @@ export default function Services() {
       >
         <motion.div variants={fadeInUp} className="text-center mb-16">
           <span className="text-primary text-sm font-medium tracking-wider uppercase">
-            Services
+            Work With Me
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mt-4 mb-4">
-            What I can build for you
+            I help founders build systems
+            <br />
+            <span className="text-gradient">that set them free.</span>
           </h2>
           <p className="text-white/40 max-w-lg mx-auto">
-            End-to-end solutions combining modern web development, AI, and solar technology.
+            You shouldn't be the bottleneck in your own business.
+            Let's build the software that replaces the work you hate.
           </p>
         </motion.div>
 
@@ -83,10 +73,6 @@ export default function Services() {
                   </div>
                 </div>
 
-                <div className="mb-4">
-                  <Badge variant={service.badgeVariant}>{service.badge}</Badge>
-                </div>
-
                 <h3 className="text-xl font-semibold text-white mb-3">
                   {service.title}
                 </h3>
@@ -95,9 +81,9 @@ export default function Services() {
                   {service.description}
                 </p>
 
-                <Button href={service.ctaHref} variant="ghost" size="sm" className="self-start">
-                  {service.cta}
-                  <span className="text-white/30">&rarr;</span>
+                <Button href="#contact" variant="ghost" size="sm" className="self-start">
+                  Let's Talk
+                  <ArrowRight size={14} className="text-white/30" />
                 </Button>
               </GlassCard>
             </motion.div>

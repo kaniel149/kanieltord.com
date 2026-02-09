@@ -3,10 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
 const links = [
-  { label: 'About', href: '#about' },
-  { label: 'Projects', href: '#projects' },
+  { label: 'Story', href: '#story' },
+  { label: 'Systems', href: '#systems' },
   { label: 'Services', href: '#services' },
-  { label: 'Links', href: '#links' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -55,7 +54,7 @@ export default function Navbar() {
             href="#contact"
             className="hidden md:inline-flex items-center px-4 py-1.5 text-sm font-medium rounded-lg bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-all duration-200"
           >
-            Get in Touch
+            Work With Me
           </a>
 
           <button
@@ -92,7 +91,7 @@ export default function Navbar() {
                 onClick={() => setMobileOpen(false)}
                 className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg bg-primary/10 text-primary border border-primary/20"
               >
-                Get in Touch
+                Work With Me
               </a>
             </div>
           </motion.div>
