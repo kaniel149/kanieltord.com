@@ -3,17 +3,19 @@ import { useRef } from 'react'
 import type { MouseEvent } from 'react'
 import {
   Sun, Globe, Monitor, TrendingUp, Activity,
-  Truck, Link2, Layout, Radio, ArrowUpRight,
+  Truck, Link2, Radio, GraduationCap, ArrowUpRight,
 } from 'lucide-react'
 import { fadeInUp, staggerContainer, staggerItem } from '../lib/motion'
 
 const systems = [
+  // — Live projects first —
   {
     title: 'Solar OS',
     outcome: 'Runs 50+ solar companies — projects, monitoring, licensing, payments — all automated.',
     status: 'live' as const,
     url: 'https://crm.navitas.co.il',
     icon: Sun,
+    category: 'Solar',
   },
   {
     title: 'Solaris Panama',
@@ -21,6 +23,7 @@ const systems = [
     status: 'live' as const,
     url: 'https://platform-gray-eta.vercel.app',
     icon: Globe,
+    category: 'Solar',
   },
   {
     title: 'Solar OS Marketing',
@@ -28,42 +31,52 @@ const systems = [
     status: 'live' as const,
     url: 'https://solar-os-website.vercel.app',
     icon: Monitor,
+    category: 'Solar',
   },
   {
+    title: 'Megged Academy',
+    outcome: 'AI-powered learning platform — 69 video workshops, 5 coaching bots, and personalized study paths.',
+    status: 'live' as const,
+    url: 'https://megged.kanielt.com',
+    icon: GraduationCap,
+    category: 'Education',
+  },
+  {
+    title: 'Morning Briefing',
+    outcome: 'Scans 5 news sources, generates a Hebrew podcast, and delivers it daily — fully autonomous.',
+    status: 'live' as const,
+    icon: Radio,
+    category: 'AI',
+  },
+  // — Building projects —
+  {
     title: 'Solari Argentina',
-    outcome: 'Complete operations playbook for entering the Argentine solar market — academy, suppliers, licensing.',
+    outcome: 'Solar market entry platform — AI proposals, bilingual tools, and partner management for Argentina.',
     status: 'building' as const,
+    url: 'https://argentina.kanielt.com',
     icon: TrendingUp,
+    category: 'Solar',
   },
   {
     title: 'HealthOS',
     outcome: 'Tracks my health data, syncs with Whoop, and optimizes my daily routine automatically.',
     status: 'building' as const,
     icon: Activity,
+    category: 'Health',
   },
   {
     title: 'Lavi Distribution',
     outcome: 'Driver routes, deliveries, signatures — a logistics company running on autopilot.',
     status: 'building' as const,
     icon: Truck,
+    category: 'Logistics',
   },
   {
     title: 'LinkHub',
-    outcome: 'A link-in-bio that AI agents can read, book through, and pay — not just humans.',
+    outcome: 'Smart link-in-bio — AI agents can discover, book, and pay through it. Not just humans.',
     status: 'building' as const,
     icon: Link2,
-  },
-  {
-    title: 'Project Dashboard',
-    outcome: 'Every project, status, and deadline — visible in one command, from anywhere.',
-    status: 'building' as const,
-    icon: Layout,
-  },
-  {
-    title: 'Morning Briefing',
-    outcome: 'AI scans the news, writes a podcast, and sends it to my phone — while I sleep.',
-    status: 'building' as const,
-    icon: Radio,
+    category: 'AI',
   },
 ]
 
@@ -103,11 +116,18 @@ function ProjectCard({ system }: { system: typeof systems[0] }) {
           <div className="w-10 h-10 rounded-xl bg-white/[0.03] border border-white/[0.05] flex items-center justify-center group-hover:border-primary/20 group-hover:bg-primary/[0.05] transition-all duration-500">
             <system.icon size={18} className="text-white/30 group-hover:text-primary/60 transition-colors duration-500" />
           </div>
-          <div className="flex items-center gap-1.5">
-            <span className={`w-1.5 h-1.5 rounded-full ${status.dot} ${system.status === 'live' ? 'animate-pulse-slow' : ''}`} />
-            <span className={`text-[11px] font-medium ${status.text}`}>
-              {status.label}
-            </span>
+          <div className="flex flex-col items-end gap-1.5">
+            <div className="flex items-center gap-1.5">
+              <span className={`w-1.5 h-1.5 rounded-full ${status.dot} ${system.status === 'live' ? 'animate-pulse-slow' : ''}`} />
+              <span className={`text-[11px] font-medium ${status.text}`}>
+                {status.label}
+              </span>
+            </div>
+            {'category' in system && system.category && (
+              <span className="text-[10px] font-medium text-white/15 tracking-[0.1em] uppercase">
+                {system.category}
+              </span>
+            )}
           </div>
         </div>
 

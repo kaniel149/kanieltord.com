@@ -6,7 +6,7 @@ import { useCounter } from '../hooks/useCounter'
 
 const stats = [
   { value: 10, suffix: 'M+', prefix: '₪', label: 'Revenue Built' },
-  { value: 10, suffix: '+', prefix: '', label: 'Systems' },
+  { value: 12, suffix: '+', prefix: '', label: 'Systems' },
   { value: 4, suffix: '', prefix: '', label: 'Countries' },
   { value: 50, suffix: '+', prefix: '', label: 'Companies' },
 ]
