@@ -3,77 +3,86 @@ import { useRef } from 'react'
 import type { MouseEvent } from 'react'
 import {
   Sun, Globe, Monitor, TrendingUp, Activity,
-  Truck, Link2, Radio, GraduationCap, ArrowUpRight,
+  Truck, Link2, Map, GraduationCap, BookOpen,
 } from 'lucide-react'
 import { fadeInUp, staggerContainer, staggerItem } from '../lib/motion'
 
 const systems = [
   // — Live projects first —
   {
-    title: 'Solar OS',
-    outcome: 'Runs 50+ solar companies — projects, monitoring, licensing, payments — all automated.',
+    title: 'Solar Intelligence',
+    outcome: 'AI maps every rooftop in a region, detects solar potential from satellite imagery, generates proposals in 3 languages, and feeds leads straight into CRM.',
     status: 'live' as const,
-    url: 'https://crm.navitas.co.il',
+    icon: Map,
+    category: 'Solar',
+    metric: '27,800 buildings mapped · 3 regions · $0 ad spend',
+  },
+  {
+    title: 'Solaris CRM',
+    outcome: 'One codebase runs 7 solar companies in 4 countries. Each gets their own brand, pipeline, and data — deployed in minutes, not months.',
+    status: 'live' as const,
     icon: Sun,
     category: 'Solar',
+    metric: '7 instances · 4 countries · multi-tenant',
   },
   {
     title: 'Solaris Panama',
-    outcome: 'AI scans satellite imagery, calculates solar ROI, and generates proposals automatically.',
+    outcome: 'AI scans satellite imagery, calculates ROI per rooftop, and generates investor-ready proposals — built for the Panama solar market from scratch.',
     status: 'live' as const,
-    url: 'https://platform-gray-eta.vercel.app',
     icon: Globe,
     category: 'Solar',
+    metric: 'Market entry in 3 weeks',
   },
   {
-    title: 'Solar OS Marketing',
-    outcome: 'Captures leads, nurtures prospects, and converts — without a salesperson.',
+    title: 'Solar OS Website',
+    outcome: 'Full marketing machine — captures leads, runs email nurture sequences, has an ROI calculator, blog, and converts visitors to customers without a salesperson.',
     status: 'live' as const,
-    url: 'https://solar-os-website.vercel.app',
     icon: Monitor,
-    category: 'Solar',
+    category: 'Marketing',
+    metric: 'Lead capture → nurture → convert · zero manual',
   },
   {
     title: 'Megged Academy',
-    outcome: 'AI-powered learning platform — 69 video workshops, 5 coaching bots, and personalized study paths.',
+    outcome: 'Turned a therapist\'s methodology into a scalable platform — 69 video workshops, 5 AI coaching bots that give personalized guidance, study paths that adapt.',
     status: 'live' as const,
-    url: 'https://megged.kanielt.com',
     icon: GraduationCap,
     category: 'Education',
+    metric: '69 lessons · 5 AI bots · personalized paths',
   },
   {
-    title: 'Morning Briefing',
-    outcome: 'Scans 5 news sources, generates a Hebrew podcast, and delivers it daily — fully autonomous.',
+    title: 'Megged Course',
+    outcome: 'A couples therapy program turned into a product — video lessons, AI-powered exercises, progress tracking, milestones, and a system that scales without the therapist.',
     status: 'live' as const,
-    icon: Radio,
-    category: 'AI',
+    icon: BookOpen,
+    category: 'Education',
+    metric: '30 exercises · milestone system · Stripe payments',
   },
   // — Building projects —
   {
-    title: 'Solari Argentina',
-    outcome: 'Solar market entry platform — AI proposals, bilingual tools, and partner management for Argentina.',
+    title: 'Solaris Argentina',
+    outcome: 'Entering a new country with AI — roof scanner mapped 1,251 buildings in Buenos Aires, auto-generates bilingual proposals, includes legal templates and market research.',
     status: 'building' as const,
-    url: 'https://argentina.kanielt.com',
     icon: TrendingUp,
     category: 'Solar',
+    metric: '1,251 buildings · ES/HE/EN',
   },
   {
     title: 'HealthOS',
-    outcome: 'Tracks my health data, syncs with Whoop, and optimizes my daily routine automatically.',
+    outcome: 'Personal operating system — syncs biometric data from Whoop, tracks recovery patterns, and uses AI to optimize daily decisions based on real data.',
     status: 'building' as const,
     icon: Activity,
     category: 'Health',
   },
   {
     title: 'Lavi Distribution',
-    outcome: 'Driver routes, deliveries, signatures — a logistics company running on autopilot.',
+    outcome: 'Replacing a logistics manager with software — driver route optimization, delivery tracking, digital signatures, all on autopilot.',
     status: 'building' as const,
     icon: Truck,
     category: 'Logistics',
   },
   {
     title: 'LinkHub',
-    outcome: 'Smart link-in-bio — AI agents can discover, book, and pay through it. Not just humans.',
+    outcome: 'A link-in-bio page where AI agents — not just humans — can discover services, book meetings, and make payments.',
     status: 'building' as const,
     icon: Link2,
     category: 'AI',
@@ -139,16 +148,10 @@ function ProjectCard({ system }: { system: typeof systems[0] }) {
           {system.outcome}
         </p>
 
-        {'url' in system && system.url && (
-          <a
-            href={system.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-sm text-white/15 hover:text-primary/70 transition-colors duration-300"
-          >
-            Visit
-            <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
-          </a>
+        {'metric' in system && system.metric && (
+          <span className="inline-flex items-center gap-1.5 text-xs text-primary/40 font-medium tracking-wide">
+            {system.metric}
+          </span>
         )}
       </div>
     </motion.div>
@@ -180,13 +183,13 @@ export default function Projects() {
             What I've Built
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-4 mb-4 leading-tight">
-            Systems designed to work
+            Not demos.
             <br className="hidden sm:block" />
-            <span className="text-gradient"> without me.</span>
+            <span className="text-gradient"> Real businesses.</span>
           </h2>
           <p className="text-white/25 max-w-lg mx-auto text-sm sm:text-base">
-            Each one replaces a manual process, a full-time role,
-            or an entire workflow I used to do myself.
+            Every system here serves real customers, generates real revenue,
+            or runs a real operation. Built with AI — not for show.
           </p>
         </motion.div>
 

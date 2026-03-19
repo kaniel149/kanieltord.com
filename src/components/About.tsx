@@ -60,38 +60,37 @@ export default function About() {
               variants={fadeInUp}
               className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 leading-[1.15]"
             >
-              From building a company
+              AI is not a toy.
               <br />
-              <span className="text-gradient">to building freedom.</span>
+              <span className="text-gradient">It's how I run my businesses.</span>
             </motion.h2>
 
             <motion.p
               variants={blurFadeIn}
               className="text-base sm:text-lg text-white/35 leading-relaxed mb-6 max-w-2xl"
             >
-              I started Navitas, a solar installation company in Israel.
-              Built it from zero to ₪10M in revenue, expanded internationally,
-              led teams of engineers and installers. But I was running faster
-              than I was living.
+              I built a solar company to ₪10M in revenue. Hired teams,
+              managed projects across countries, closed deals manually.
+              Then I realized — I was scaling the work, not the business.
             </motion.p>
 
             <motion.p
               variants={blurFadeIn}
               className="text-base sm:text-lg text-white/35 leading-relaxed mb-6 max-w-2xl"
             >
-              After 2023 changed everything, my wife and I made a choice:
-              we're going to design how we live — not just survive.
-              We moved to Koh Phangan, Thailand, and I started building AI
-              systems to replace every manual process in my businesses.
+              So I started replacing myself. Not with employees — with AI-powered
+              systems. A CRM that runs 7 companies from one codebase. A GIS platform
+              that maps 27,800 buildings and generates proposals automatically.
+              Marketing systems that capture and convert leads while I sleep.
             </motion.p>
 
             <motion.p
               variants={blurFadeIn}
               className="text-base sm:text-lg text-white/35 leading-relaxed mb-10 max-w-2xl"
             >
-              Now my software manages solar companies, writes proposals,
-              monitors installations, and captures leads — while I'm
-              at the beach with my kids.
+              Today I operate across 5 countries from Koh Phangan, Thailand.
+              No office. No large team. Just systems that create real value
+              for real customers — and AI that makes it all possible.
             </motion.p>
 
             <motion.div
@@ -100,9 +99,9 @@ export default function About() {
             >
               <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-primary/40 via-primary/15 to-transparent" />
               <p className="text-white/50 text-lg italic leading-relaxed">
-                "Every system I build is designed to work without me.
+                "Most people use AI to generate content. I use it to generate companies.
                 <br />
-                <span className="text-white/70">That's the whole point.</span>"
+                <span className="text-white/70">That's the difference.</span>"
               </p>
             </motion.div>
           </div>

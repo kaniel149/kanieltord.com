@@ -6,8 +6,8 @@ import { useCounter } from '../hooks/useCounter'
 
 const stats = [
   { value: 10, suffix: 'M+', prefix: '₪', label: 'Revenue Built' },
-  { value: 12, suffix: '+', prefix: '', label: 'Systems' },
-  { value: 4, suffix: '', prefix: '', label: 'Countries' },
+  { value: 15, suffix: '+', prefix: '', label: 'Systems' },
+  { value: 5, suffix: '', prefix: '', label: 'Countries' },
   { value: 50, suffix: '+', prefix: '', label: 'Companies' },
 ]
 
@@ -84,7 +84,7 @@ export default function Hero() {
                   transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
                   className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]"
                 >
-                  <span className="text-white">I build systems</span>
+                  <span className="text-white">I use AI to build</span>
                 </motion.h1>
               </div>
               <div className="overflow-hidden">
@@ -94,8 +94,7 @@ export default function Hero() {
                   transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
                   className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]"
                 >
-                  <span className="text-white">that </span>
-                  <span className="text-gradient">replace me</span>
+                  <span className="text-gradient">real companies</span>
                   <span className="text-white">.</span>
                 </motion.h1>
               </div>
@@ -107,9 +106,9 @@ export default function Hero() {
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.5 }}
               className="text-base sm:text-lg text-white/35 leading-relaxed mb-10 max-w-lg"
             >
-              After scaling a solar company to ₪10M, I started building
-              AI&#8209;powered software that runs businesses — so founders
-              can actually live.
+              Most people use AI to write emails. I use it to build companies
+              that operate across 5&nbsp;countries, serve real customers, and generate
+              real revenue — without growing a team.
             </motion.p>
 
             <motion.div

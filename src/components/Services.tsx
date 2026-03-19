@@ -5,21 +5,21 @@ import { fadeInUp, staggerContainer, staggerItem } from '../lib/motion'
 const services = [
   {
     icon: Blocks,
-    title: 'SaaS Development',
+    title: 'Business Automation',
     description:
-      'Custom platforms that run your business — from database and auth to payments, dashboards, and deployment. You describe the workflow, I build the system.',
+      'Full-stack platforms that replace manual work — CRM, payments, dashboards, email sequences, and multi-tenant architecture. You describe the process, I build the system that runs it.',
   },
   {
     icon: Bot,
-    title: 'AI Integration',
+    title: 'AI-Powered Systems',
     description:
-      'Turn manual processes into automated ones — chatbots, document processing, voice cloning, smart pipelines. Less busywork, more freedom.',
+      'From satellite image analysis to AI coaching bots — I build systems where AI does the heavy lifting. Document processing, voice cloning, GIS mapping, smart proposals.',
   },
   {
     icon: Sun,
     title: 'Solar Technology',
     description:
-      'Full-stack solar business systems — CRM setup, inverter monitoring, energy analysis, licensing automation. Everything a solar company needs to scale.',
+      'End-to-end solar platforms — roof scanning with 27,800+ buildings mapped, automated proposals in 3 languages, CRM with 7 instances across 5 countries.',
   },
 ]
 
@@ -48,13 +48,13 @@ export default function Services() {
             Work With Me
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-4 mb-4 leading-tight">
-            I help founders build systems
+            I build the system.
             <br />
-            <span className="text-gradient">that set them free.</span>
+            <span className="text-gradient">You run the business.</span>
           </h2>
           <p className="text-white/25 max-w-lg mx-auto text-sm sm:text-base">
-            You shouldn't be the bottleneck in your own business.
-            Let's build the software that replaces the work you hate.
+            You have the domain expertise and the customers.
+            I turn that into software that scales without adding headcount.
           </p>
         </motion.div>
 
