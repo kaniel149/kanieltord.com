@@ -37,7 +37,7 @@ export default function Footer() {
 
         <motion.div variants={blurFadeIn} className="flex flex-col items-center gap-2 text-center">
           <span className="text-[11px] text-white/15 tracking-wide">
-            &copy; {new Date().getFullYear()} Kaniel Tord. KANIEL TORD LLC.
+            &copy; {new Date().getFullYear()} Kaniel Tord (Kaniel Tordjman). KANIEL TORD LLC.
           </span>
           <span className="text-[11px] text-white/10 tracking-wide">
             Building from Koh Phangan, Thailand.
