@@ -1,7 +1,15 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import Button from './ui/Button'
-import { blurFadeIn, staggerContainer } from '../lib/motion'
+import type { Variants } from 'framer-motion'
+import { blurFadeIn } from '../lib/motion'
+
+// Stagger without fading the whole grid: an opacity:0 parent hides the LCP text
+// in the prerendered HTML until JS hydrates.
+const heroStagger: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
+}
 import { useCounter } from '../hooks/useCounter'
 
 const stats = [
@@ -58,7 +66,7 @@ export default function Hero() {
         className="relative z-10 w-full max-w-6xl mx-auto px-6 py-24 sm:py-32"
       >
         <motion.div
-          variants={staggerContainer}
+          variants={heroStagger}
           initial="hidden"
           animate="visible"
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
@@ -100,9 +108,10 @@ export default function Hero() {
               </div>
             </div>
 
+            {/* LCP element: keep it visible in the prerendered HTML (no opacity/blur start) */}
             <motion.p
-              initial={{ opacity: 0, filter: 'blur(20px)', y: 20 }}
-              animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
+              initial={{ y: 20 }}
+              animate={{ y: 0 }}
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.5 }}
               className="text-base sm:text-lg text-white/35 leading-relaxed mb-10 max-w-lg"
             >
@@ -149,7 +158,7 @@ export default function Hero() {
               <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-secondary/10 to-primary/20 rounded-2xl blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-1000" />
               <img
                 src="/kaniel-hero.jpg"
-                alt="Kaniel Tord"
+                alt="Kaniel Tord (Kaniel Tordjman)"
                 className="relative w-80 h-auto rounded-2xl border border-white/[0.08]"
               />
             </div>
